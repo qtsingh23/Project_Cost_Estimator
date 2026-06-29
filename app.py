@@ -70,6 +70,7 @@ def cocomo_estimation():
         st.write(f"**Effort (Person-Months):** {effort:.2f}")
         st.write(f"**Duration (Months):** {duration:.2f}")
         st.write(f"**Average Staffing:** {math.ceil(staffing)}")
+        
 
         # Chart for COCOMO
         data = {"Metric": ["Effort", "Duration", "Staffing"],
@@ -91,6 +92,7 @@ def fpa_estimation():
     *   **Adjusted Function Points (AFP):** `AFP = UFP * VAF`
     *   **Estimated Effort (Person-Months):** `Effort = AFP / Productivity Rate`
     """)
+    
 
     st.subheader("Input Function Point Counts")
     col1, col2, col3 = st.columns(3)
