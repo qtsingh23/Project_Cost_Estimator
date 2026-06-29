@@ -55,11 +55,13 @@ def cocomo_estimation():
             st.error("Invalid input for KLOC. Please enter a number.")
             return
 
+
         coefficients = {
             "Organic": {"a": 2.4, "b": 1.05, "c": 2.5, "d": 0.38},
             "Semi-Detached": {"a": 3.0, "b": 1.12, "c": 2.5, "d": 0.35},
             "Embedded": {"a": 3.6, "b": 1.20, "c": 2.5, "d": 0.32}
         }
+
 
         params = coefficients[project_type]
         effort = params["a"] * (kloc ** params["b"])
@@ -71,6 +73,7 @@ def cocomo_estimation():
         st.write(f"**Duration (Months):** {duration:.2f}")
         st.write(f"**Average Staffing:** {math.ceil(staffing)}")
         
+
 
         # Chart for COCOMO
         data = {"Metric": ["Effort", "Duration", "Staffing"],
