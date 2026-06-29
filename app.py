@@ -92,6 +92,7 @@ def fpa_estimation():
     *   **Adjusted Function Points (AFP):** `AFP = UFP * VAF`
     *   **Estimated Effort (Person-Months):** `Effort = AFP / Productivity Rate`
     """)
+
     
 
     st.subheader("Input Function Point Counts")
@@ -108,6 +109,7 @@ def fpa_estimation():
     st.subheader("Adjustment Factors")
     vaf = st.slider("Value Adjustment Factor (VAF)", min_value=0.5, max_value=1.5, value=1.0, step=0.01)
     productivity_rate = st.number_input("Productivity Rate (AFP/Person-Month)", min_value=0.1, value=10.0, step=0.1)
+    
 
     if st.button("Calculate FPA"):
         if productivity_rate <= 0:
