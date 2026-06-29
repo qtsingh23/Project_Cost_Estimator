@@ -109,7 +109,7 @@ def fpa_estimation():
     st.subheader("Adjustment Factors")
     vaf = st.slider("Value Adjustment Factor (VAF)", min_value=0.5, max_value=1.5, value=1.0, step=0.01)
     productivity_rate = st.number_input("Productivity Rate (AFP/Person-Month)", min_value=0.1, value=10.0, step=0.1)
-    
+
 
     if st.button("Calculate FPA"):
         if productivity_rate <= 0:
@@ -164,6 +164,7 @@ def financial_tracking():
                 })
                 st.success(f"Task \'{task_name}\' added.")
 
+
     st.subheader("Current Tasks and Costs")
     if st.session_state.tasks:
         df_tasks = pd.DataFrame(st.session_state.tasks)
@@ -171,6 +172,7 @@ def financial_tracking():
 
         total_project_cost = df_tasks["Total Cost"].sum()
         st.markdown(f"### Total Estimated Project Cost: ${total_project_cost:,.2f}")
+
 
         # Chart for tasks
         fig = px.pie(df_tasks, values='Total Cost', names='Task Name', title='Cost Distribution by Task',
