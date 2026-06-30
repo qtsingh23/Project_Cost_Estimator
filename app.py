@@ -105,6 +105,7 @@ def fpa_estimation():
         ilf = st.number_input("Internal Logical Files (ILF)", min_value=0, value=10)
     with col3:
         eif = st.number_input("External Interface Files (EIF)", min_value=0, value=10)
+        
 
     st.subheader("Adjustment Factors")
     vaf = st.slider("Value Adjustment Factor (VAF)", min_value=0.5, max_value=1.5, value=1.0, step=0.01)
